@@ -2,4 +2,4 @@ run:
 	go run . -dict example_dict.txt
 
 build:
-	go build .
+	CGO_ENABLED=0 go build .
