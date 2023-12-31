@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Anagrams</title>
+  </head>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+
+    .form-container {
+      display: flex;
+      align-items: center;
+    }
+
+    .letters-input {
+      flex: 1;
+      padding: 8px;
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      margin-right: 8px; /* Add some spacing between input and button */
+    }
+
+    .find-button {
+      padding: 8px;
+      background-color: #ffffff;
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      border-radius: 0.25rem;
+      box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+      color: rgba(0, 0, 0, 0.85);
+    }
+
+    .results {
+      margin-top: 20px;
+    }
+  </style>
+  <body>
+    <form action="/" method="post" class="form-container">
+      <input
+        type="text"
+        id="letters"
+        name="letters"
+        value="{{.Letters}}"
+        required
+        class="letters-input"
+      />
+      <button type="submit" class="find-button">Find</button>
+    </form>
+    <div class="results">
+      <div id="words">
+        {{range .Words}}
+        <span>{{ . }}</span>
+        {{end}}
+      </div>
+    </div>
+  </body>
+</html>
